@@ -1,0 +1,8 @@
+/* src/styles/sidebar.css */
+@media (min-width: 768px) {
+  .offcanvas {
+    visibility: visible !important;
+    transform: none !important;
+    position: static;
+  }
+}

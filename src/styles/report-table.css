@@ -1,0 +1,1030 @@
+/* styles/report-table.css */
+
+/* ==================== REPORT TABLE STYLES ==================== */
+
+.report-container {
+  background: #f8f9ff;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Header Section */
+.report-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.report-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 20s linear infinite;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.header-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.header-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.header-text {
+  color: white;
+}
+
+.report-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.report-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+/* Controls Section */
+.report-controls {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8ecf4;
+}
+
+.form-label {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-label i {
+  color: #667eea;
+}
+
+.custom-select {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: #fafbfc;
+}
+
+.custom-select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+  background-color: white;
+}
+
+.custom-select:hover {
+  background-color: white;
+  border-color: #cbd5e0;
+}
+
+/* Export Buttons */
+.export-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-export-pdf,
+.btn-export-excel {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-export-pdf {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-export-pdf:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+.btn-export-excel {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+}
+
+.btn-export-excel:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+}
+
+.btn-export-pdf:disabled,
+.btn-export-excel:disabled {
+  opacity: 0.7;
+  transform: none !important;
+  cursor: not-allowed;
+}
+
+/* Statistics Section */
+.stats-section {
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8ecf4;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 0 2px 2px 0;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stat-primary::before {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stat-success::before {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+}
+
+.stat-info::before {
+  background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.stat-primary .stat-icon {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stat-success .stat-icon {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+}
+
+.stat-info .stat-icon {
+  background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #2d3748;
+}
+
+.stat-label {
+  color: #718096;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Table Section */
+.table-section {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8ecf4;
+  overflow: hidden;
+}
+
+.table-header {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e8ecf4;
+}
+
+.table-title {
+  color: #2d3748;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.table-title i {
+  color: #667eea;
+}
+
+.table-info .badge {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #cbd5e0;
+}
+
+/* Custom Table */
+.custom-table {
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.custom-table thead th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.custom-table thead th:first-child {
+  border-radius: 0;
+}
+
+.custom-table thead th:last-child {
+  border-radius: 0;
+}
+
+.custom-table tbody td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e8ecf4;
+  vertical-align: middle;
+}
+
+.table-row {
+  transition: all 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f7fafc;
+  transform: scale(1.001);
+}
+
+/* Employee Info */
+.employee-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.employee-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.employee-name {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+/* Amount Badge */
+.amount-badge {
+  background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+  color: #0277bd;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid #81d4fa;
+}
+
+/* Role Badge */
+.role-badge {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  color: #7c3aed;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  border: 1px solid #c084fc;
+}
+
+/* Total Row */
+.total-row {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-top: 2px solid #cbd5e0;
+}
+
+.total-row td {
+  font-weight: 600;
+  color: #2d3748;
+  border-bottom: none;
+}
+
+.total-amount {
+  color: #92400e;
+  padding: 0.3rem 0.1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8ecf4;
+}
+
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: #64748b;
+}
+
+.empty-state h4 {
+  color: #2d3748;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #718096;
+  margin-bottom: 0;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* ==================== MOBILE FIXES ==================== */
+
+/* Fix the problematic mobile table styles */
+@media (max-width: 575.98px) {
+  .report-container {
+    padding: 0.5rem;
+  }
+  
+  .table-responsive {
+    border-radius: 10px;
+    margin: 0 -15px; /* Extend to screen edges on mobile */
+  }
+  
+  /* Remove the problematic stacked table layout */
+  .custom-table thead {
+    display: table-header-group; /* Keep headers visible */
+  }
+  
+  .custom-table tbody tr {
+    display: table-row; /* Keep normal table structure */
+    border: none;
+    margin-bottom: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  .custom-table tbody td {
+    display: table-cell; /* Keep normal table cells */
+    text-align: center; /* Center align for mobile */
+    border-bottom: 1px solid #f1f5f9;
+    padding: 0.75rem 0.5rem;
+    position: relative;
+    padding-left: 0.5rem; /* Reset padding */
+    word-break: break-word; /* Handle long text */
+    font-size: 0.75rem; /* Smaller font for mobile */
+  }
+  
+  .custom-table tbody td:last-child {
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  /* Remove the pseudo-element labels */
+  .custom-table tbody td::before {
+    display: none;
+  }
+  
+  /* Adjust employee info for mobile */
+  .employee-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+  }
+  
+  .employee-name {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+  
+  /* Smaller badges for mobile */
+  .amount-badge,
+  .role-badge {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 12px;
+    display: inline-block;
+    word-break: keep-all;
+  }
+  
+  .total-amount {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+  
+  /* Fix controls section spacing */
+  .report-controls {
+    padding: 1rem;
+    margin: 0 -15px 1rem -15px;
+    border-radius: 0;
+  }
+  
+  /* Stack export buttons vertically */
+  .export-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .btn-export-pdf,
+  .btn-export-excel {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Fix header spacing */
+  .report-header {
+    margin: 0 -15px 1rem -15px;
+    border-radius: 0;
+  }
+  
+  /* Fix stats cards */
+  .stats-section {
+    margin: 0 -15px 1rem -15px;
+  }
+  
+  .stat-card {
+    margin-bottom: 0.75rem;
+    border-radius: 0;
+    padding: 1rem;
+  }
+  
+  /* Fix table section */
+  .table-section {
+    margin: 0 -15px;
+    border-radius: 0;
+  }
+  
+  .table-header {
+    padding: 1rem;
+  }
+  
+  .table-title {
+    font-size: 1rem;
+  }
+}
+
+/* Additional fixes for very small screens */
+@media (max-width: 375px) {
+  .custom-table thead th,
+  .custom-table tbody td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.5rem;
+  }
+  
+  .stat-number {
+    font-size: 1.2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .report-title {
+    font-size: 1.25rem;
+  }
+  
+  .report-subtitle {
+    font-size: 0.85rem;
+  }
+}
+
+/* Fix for medium tablets */
+@media (max-width: 768px) and (min-width: 576px) {
+  .export-buttons {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  
+  .btn-export-pdf,
+  .btn-export-excel {
+    flex: 1;
+  }
+  
+  .custom-table thead th,
+  .custom-table tbody td {
+    padding: 0.70rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Fix horizontal scrolling issues */
+@media (max-width: 991.98px) {
+  .container-fluid {
+    padding: 0 15px;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Ensure minimum width for table */
+  .custom-table {
+    min-width: 100%;
+    width: auto;
+  }
+  
+  /* Fix form controls width */
+  .custom-select {
+    width: 100%;
+  }
+  
+  /* Better spacing for controls */
+  .report-controls .row > .col-md-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .report-controls .row > .col-md-4:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes float {
+  0%, 100% { transform: rotate(0deg) translate(0px); }
+  25% { transform: rotate(90deg) translate(20px); }
+  50% { transform: rotate(180deg) translate(0px); }
+  75% { transform: rotate(270deg) translate(-20px); }
+}
+
+/* teruskan dari sini *//* Fade in animation untuk elemen-elemen */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Loading state animations */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button hover effects */
+.btn-export-pdf::before,
+.btn-export-excel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-export-pdf:hover::before,
+.btn-export-excel:hover::before {
+  left: 100%;
+}
+
+/* Enhanced table animations */
+.custom-table tbody .table-row {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.custom-table tbody .table-row:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.custom-table tbody .table-row:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+/* Progress bar animation */
+@keyframes progressBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.progress-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+  animation: progressBar 2s ease-in-out;
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2d3748;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #2d3748;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Notification styles */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #10b981;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
+  z-index: 1050;
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+.notification.success {
+  border-left-color: #10b981;
+}
+
+.notification.error {
+  border-left-color: #ef4444;
+}
+
+.notification.warning {
+  border-left-color: #f59e0b;
+}
+
+/* Search/Filter input styles */
+.search-input {
+  position: relative;
+}
+
+.search-input input {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 25px;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.search-input input:focus {
+  background: white;
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+}
+
+.search-input i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
+
+/* Pagination styles */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.pagination-info {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination .page-btn {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 6px;
+  color: #4a5568;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.pagination .page-btn:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+  transform: translateY(-1px);
+}
+
+.pagination .page-btn.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.pagination .page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Dark mode support */
+.dark-mode {
+  background: #1a202c;
+  color: #e2e8f0;
+}
+
+.dark-mode .report-container {
+  background: #1a202c;
+}
+
+.dark-mode .report-controls,
+.dark-mode .table-section,
+.dark-mode .stat-card {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.dark-mode .custom-table tbody td {
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.dark-mode .table-row:hover {
+  background-color: #374151;
+}
+
+.dark-mode .custom-select {
+  background-color: #374151;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+/* Print styles */
+@media print {
+  .report-controls,
+  .export-buttons,
+  .pagination-container {
+    display: none !important;
+  }
+  
+  .report-container {
+    background: white !important;
+    padding: 0 !important;
+  }
+  
+  .report-header {
+    background: #667eea !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .table-section {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+  
+  .custom-table {
+    font-size: 0.8rem !important;
+  }
+  
+  .stat-card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
+
+/* Accessibility improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles for keyboard navigation */
+.custom-select:focus,
+.btn-export-pdf:focus,
+.btn-export-excel:focus,
+.page-btn:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .report-header {
+    background: #000 !important;
+    color: #fff !important;
+  }
+  
+  .custom-table thead th {
+    background: #000 !important;
+    color: #fff !important;
+  }
+  
+  .btn-export-pdf,
+  .btn-export-excel {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .float {
+    animation: none !important;
+  } 
+}
