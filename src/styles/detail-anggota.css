@@ -148,13 +148,16 @@
 }
 
 .header-actions {
+  width: 100%;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   position: relative;
   z-index: 1;
+  justify-content: center;
 }
 
 .action-btn {
+  width: 150px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
