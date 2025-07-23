@@ -238,7 +238,7 @@ export default function MasterKeanggotaanPage() {
                   <div className="info-row">
                     <span className="info-label">Bergabung:</span>
                     <span className="info-date">
-                      {new Date(user.createdAt).toLocaleDateString('id-ID', {
+                      {new Date(user.tgl).toLocaleDateString('id-ID', {
                         day: 'numeric',
                         month: 'short',
                         year: 'numeric'

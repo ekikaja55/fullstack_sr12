@@ -11,6 +11,7 @@ export default function EditUserPage() {
     name: '',
     nohp: '',
     role: '',
+    tgl: '',
   })
   const [loading, setLoading] = useState(true)
   const [submitting, setSubmitting] = useState(false)
@@ -24,6 +25,7 @@ export default function EditUserPage() {
           name: data.user.name,
           nohp: data.user.nohp || '',
           role: data.user.role,
+          tgl: data.user.tgl || '',
         })
       } catch (error) {
         console.error('Error fetching user:', error)
@@ -42,7 +44,7 @@ export default function EditUserPage() {
   const handleSubmit = async e => {
     e.preventDefault()
     setSubmitting(true)
-    
+
     try {
       const res = await fetch(`/api/users/${id}`, {
         method: 'PUT',
@@ -100,8 +102,8 @@ export default function EditUserPage() {
                 </div>
               </div>
               <div className="d-flex gap-2">
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={handleCancel}
                   className="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2"
                 >
@@ -163,6 +165,27 @@ export default function EditUserPage() {
                   </div>
                 </div>
 
+                {/* Tanggal Bergabung */}
+                <div className="col-12">
+                  <div className="form-group-enhanced">
+                    <label className="form-label-enhanced">
+                      <i className="bi bi-calendar-date form-label-icon"></i>
+                      Tanggal Bergabung
+                      <span className="text-danger">*</span>
+                    </label>
+                    <div className="input-wrapper">
+                      <input
+                        type="date"
+                        name="tgl"
+                        value={form.tgl}
+                        onChange={handleChange}
+                        required
+                        className="form-control-enhanced"
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 {/* Role Field */}
                 <div className="col-12">
                   <div className="form-group-enhanced">
@@ -193,8 +216,8 @@ export default function EditUserPage() {
               {/* Action Buttons */}
               <div className="form-actions">
                 <div className="d-flex gap-3 justify-content-end flex-wrap">
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     onClick={handleCancel}
                     className="btn-cancel"
                     disabled={submitting}
@@ -202,8 +225,8 @@ export default function EditUserPage() {
                     <i className="bi bi-x-circle"></i>
                     Batal
                   </button>
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="btn-save"
                     disabled={submitting}
                   >

@@ -15,6 +15,7 @@ export async function GET() {
     total_income: u.total_income,
     parentId: u.parentId?._id?.toString() || null,
     parentName: u.parentId?.name || null,
+    tgl: u.tgl,
     createdAt: u.createdAt
     }))
 
@@ -26,14 +27,14 @@ export async function POST(req) {
 
   try {
     const body = await req.json()
-    const { name, nohp, role, parentId } = body
+    const { name, nohp, role, parentId, tgl } = body
 
     const existing = await User.findOne({ name })
     if (existing) {
       return NextResponse.json({ error: 'Nama sudah terdaftar' }, { status: 400 })
     }
 
-    const newUser = await User.create({ name, nohp, role, parentId })
+    const newUser = await User.create({ name, nohp, role, parentId, tgl })
     return NextResponse.json(newUser, { status: 201 })
   } catch (err) {
     console.error('Error:', err)

@@ -22,7 +22,11 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     default: null
-  }
+  },
+  tgl: {
+    type: String,
+    default: () => new Date().toISOString().split('T')[0],
+  },
 }, { timestamps: true })
 
 export default mongoose.models.User || mongoose.model('User', userSchema)

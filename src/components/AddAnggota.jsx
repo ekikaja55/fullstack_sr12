@@ -8,6 +8,7 @@ export default function AddAnggota({ onSuccess }) {
   const [name, setName] = useState('')
   const [nohp, setNohp] = useState('')
   const [role, setRole] = useState('')
+  const [tgl, setTgl] = useState('')
   const [parentId, setParentId] = useState('')
   const [allUsers, setAllUsers] = useState([])
 
@@ -37,7 +38,7 @@ export default function AddAnggota({ onSuccess }) {
     getAllowedUplineRoles(role).includes(user.role)
   )
 
-   const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     const body = {
@@ -45,6 +46,7 @@ export default function AddAnggota({ onSuccess }) {
       nohp,
       role,
       parentId: parentId || null,
+      tgl,
     }
 
     try {
@@ -112,6 +114,14 @@ export default function AddAnggota({ onSuccess }) {
             <option key={r} value={r}>{r}</option>
           ))}
         </select>
+
+        <input
+          type="date"
+          className="w-full border p-2 rounded"
+          value={tgl}
+          onChange={(e) => setTgl(e.target.value)}
+          required
+        />
 
         {role && role !== 'Distributor' && (
           <select

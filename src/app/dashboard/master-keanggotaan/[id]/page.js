@@ -219,7 +219,7 @@ export default function DetailAnggotaPage() {
               <div className="info-item">
                 <span className="info-label">Tanggal Bergabung</span>
                 <span className="info-value">
-                  {new Date(user.createdAt).toLocaleDateString('id-ID', {
+                  {new Date(user.tgl).toLocaleDateString('id-ID', {
                     weekday: 'long',
                     year: 'numeric',
                     month: 'long',
